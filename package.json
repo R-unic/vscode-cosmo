@@ -1,0 +1,25 @@
+{
+  "name": "cosmo-syntax-highlighting",
+  "displayName": "Cosmo Syntax Highlighting",
+  "description": "Provides syntax highlighting for the Cosmo language made by R-unic.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "cosmo",
+      "aliases": ["Cosmo", "cosmo"],
+      "extensions": [".cos"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "cosmo",
+      "scopeName": "source.cosmo",
+      "path": "./syntaxes/cosmo.tmLanguage.json"
+    }]
+  }
+}
