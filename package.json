@@ -1,5 +1,6 @@
 {
   "name": "vscode-cosmo",
+  "publisher": "R-unic",
   "displayName": "Cosmo Syntax Highlighting",
   "description": "Provides syntax highlighting for the Cosmo language made by R-unic.",
   "version": "0.1.0",
