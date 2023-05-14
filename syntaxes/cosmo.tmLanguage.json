@@ -1,20 +1,63 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Cosmo",
+	"fileTypes": ["cos"],
 	"patterns": [
+		{
+			"include": "#comments"
+		},
 		{
 			"include": "#keywords"
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#characters"
+		},
+		{
+			"include": "#numerics"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#identifiers"
 		}
 	],
 	"repository": {
+		"comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-hash.cosmo",
+          "match": "##.*$"
+        },
+        {
+          "name": "comment.block",
+          "begin": "#:",
+          "end": ":#"
+        }
+      ]
+    },
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.cosmo",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.cosmo",
+					"match": "\\b(if|unless|while|until|for|in|of|return|fn)\\b"
+				},
+				{
+          "name": "keyword.type.cosmo",
+          "match": "\\b(bool|int|float|string|char|any|void)\\b"
+        },
+				{
+          "name": "keyword.control.cosmo",
+          "match": "\\b(none)\\b"
+        },
+        {
+          "name": "keyword.other.cosmo",
+          "match": "\\b(true|false)\\b"
+        }
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.cosmo",
@@ -26,7 +69,60 @@
 					"match": "\\\\."
 				}
 			]
-		}
+		},
+		"characters": {
+      "name": "string.quoted.single.cosmo",
+      "begin": "'",
+      "end": "'",
+      "patterns": [
+        {
+          "name": "constant.character.character-literal.cosmo",
+          "match": "\\\\."
+        }
+      ]
+    },
+		"numerics": {
+			"name": "constant.numeric.cosmo",
+			"patterns": [
+				{
+					"name": "constant.numeric.cosmo",
+					"match": "\\b\\d+(\\.\\d+)?\\b"
+				}
+			]
+		},
+		"functions": {
+      "patterns": [
+        {
+          "name": "meta.function-call.cosmo",
+          "match": "\\b\\w+\\s*\\(",
+          "captures": {
+            "0": {
+              "name": "entity.name.function.cosmo"
+            }
+          }
+        },
+        {
+          "name": "meta.function.cosmo",
+          "match": "\\b(\\w+)\\s+fn\\s+(\\w+)\\s*\\(",
+          "captures": {
+            "1": {
+              "name": "storage.type.cosmo"
+            },
+            "2": {
+              "name": "entity.name.function.cosmo"
+            }
+          }
+        }
+      ]
+    },
+		"identifiers": {
+      "patterns": [
+        {
+          "name": "variable.other.cosmo",
+          "match": "\\b\\w+\\b"
+        }
+      ]
+    }
 	},
 	"scopeName": "source.cosmo"
 }
