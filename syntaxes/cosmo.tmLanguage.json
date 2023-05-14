@@ -1,7 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Cosmo",
-	"fileTypes": ["cos"],
+	"fileTypes": ["cos", "⭐"],
 	"patterns": [
 		{
 			"include": "#comments"
@@ -23,9 +23,130 @@
 		},
 		{
 			"include": "#identifiers"
+		},
+    {
+			"include": "#object-types"
 		}
 	],
 	"repository": {
+    "generics": {
+			"begin": "<",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.bracket.angle.cosmo"
+				}
+			},
+			"end": ">",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.bracket.angle.cosmo"
+				}
+			},
+			"patterns": [
+				{
+					"match": "\\b(extends|super)\\b",
+					"name": "storage.modifier.$1.cosmo"
+				},
+				{
+					"match": "(?<!\\.)([a-zA-Z$_][a-zA-Z0-9$_]*)(?=\\s*<)",
+					"captures": {
+						"1": {
+							"name": "storage.type.cosmo"
+						}
+					}
+				},
+				{
+					"match": "[a-zA-Z$_][a-zA-Z0-9$_]*",
+					"name": "storage.type.generic.cosmo"
+				},
+				{
+					"match": "\\?",
+					"name": "storage.type.generic.wildcard.cosmo"
+				},
+				{
+					"match": "&",
+					"name": "punctuation.separator.types.cosmo"
+				},
+				{
+					"match": ",",
+					"name": "punctuation.separator.delimiter.cosmo"
+				},
+				{
+					"match": "\\.",
+					"name": "punctuation.separator.period.cosmo"
+				},
+				{
+					"include": "#generics"
+				}
+			]
+		},
+    "object-types": {
+			"patterns": [
+				{
+					"include": "#generics"
+				},
+				{
+					"begin": "\\b((?:[A-Za-z_]\\w*\\s*\\.\\s*)*)([A-Z_]\\w*)\\s*(?=\\[)",
+					"beginCaptures": {
+						"1": {
+							"patterns": [
+								{
+									"match": "[A-Za-z_]\\w*",
+									"name": "storage.type.cosmo"
+								},
+								{
+									"match": "\\.",
+									"name": "punctuation.separator.period.cosmo"
+								}
+							]
+						},
+						"2": {
+							"name": "storage.type.object.array.cosmo"
+						}
+					},
+					"end": "(?!\\s*\\[)",
+					"patterns": [
+						{
+							"include": "#comments"
+						}
+					]
+				},
+				{
+					"match": "\\b((?:[A-Za-z_]\\w*\\s*\\.\\s*)*[A-Z_]\\w*)\\s*(?=<)",
+					"captures": {
+						"1": {
+							"patterns": [
+								{
+									"match": "[A-Za-z_]\\w*",
+									"name": "storage.type.cosmo"
+								},
+								{
+									"match": "\\.",
+									"name": "punctuation.separator.period.cosmo"
+								}
+							]
+						}
+					}
+				},
+				{
+					"match": "\\b((?:[A-Za-z_]\\w*\\s*\\.\\s*)*[A-Z_]\\w*)\\b((?=\\s*[A-Za-z$_\\n])|(?=\\s*\\.\\.\\.))",
+					"captures": {
+						"1": {
+							"patterns": [
+								{
+									"match": "[A-Za-z_]\\w*",
+									"name": "storage.type.cosmo"
+								},
+								{
+									"match": "\\.",
+									"name": "punctuation.separator.period.cosmo"
+								}
+							]
+						}
+					}
+				}
+			]
+		},
 		"comments": {
       "patterns": [
         {
@@ -49,13 +170,13 @@
           "name": "keyword.type.cosmo",
           "match": "\\b(bool|int|float|string|char|any|void)\\b"
         },
-				{
-          "name": "keyword.control.cosmo",
-          "match": "\\b(none)\\b"
-        },
         {
           "name": "keyword.other.cosmo",
           "match": "\\b(true|false)\\b"
+        },
+        {
+          "name": "entity.name.tag",
+          "match": "\\b(none)\\b"
         }
 			]
 		},
@@ -120,7 +241,35 @@
         {
           "name": "variable.other.cosmo",
           "match": "\\b\\w+\\b"
-        }
+        },
+        {
+          "name": "entity.name.class",
+          "match": "($)"
+        },
+        {
+          "name": "entity.name.class",
+          "match": "([_$[:upper:]][_$[:alnum:]]*)"
+        },
+        {
+					"match": "(\\->|.|::)",
+					"name": "keyword.operator.access.cosmo"
+				},
+        {
+					"match": "(\\-|\\+|\\*|\\/|\\^|\\%)",
+					"name": "keyword.operator.arithmetic.cosmo"
+				},
+				{
+					"match": "(=|\\-=|\\+=|\\*=|\\/=|\\^=|\\%=)",
+					"name": "keyword.operator.assignment.cosmo"
+				},
+				{
+					"match": "(==|<=|>=|!=|<|>)",
+					"name": "keyword.operator.comparison.cosmo"
+				},
+				{
+					"match": "(!|&|[|])",
+					"name": "keyword.operator.logical.cosmo"
+				}
       ]
     }
 	},
