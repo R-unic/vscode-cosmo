@@ -164,11 +164,11 @@
 			"patterns": [
 				{
 					"name": "keyword.control.cosmo",
-					"match": "\\b(if|unless|while|until|for|in|of|return|fn)\\b"
+					"match": "\\b(if|unless|else|while|until|break|next|for|in|of|return|fn)\\b"
 				},
 				{
           "name": "keyword.type.cosmo",
-          "match": "\\b(bool|int|float|string|char|any|void)\\b"
+          "match": "\\b(type|bool|int|float|string|char|any|void)\\b"
         },
         {
           "name": "keyword.other.cosmo",
@@ -183,7 +183,20 @@
 		"strings": {
 			"name": "string.quoted.double.cosmo",
 			"begin": "\"",
-			"end": "\"",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.cosmo"
+				}
+			},
+			"end": "(\")|((?:[^\\\\\\n])$)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.string.end.cosmo"
+				},
+				"2": {
+					"name": "invalid.illegal.newline.cosmo"
+				}
+			},
 			"patterns": [
 				{
 					"name": "constant.character.escape.cosmo",
@@ -194,7 +207,20 @@
 		"characters": {
       "name": "string.quoted.single.cosmo",
       "begin": "'",
-      "end": "'",
+      "beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.cosmo"
+				}
+			},
+			"end": "(\\')|((?:[^\\\\\\n])$)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.string.end.cosmo"
+				},
+				"2": {
+					"name": "invalid.illegal.newline.cosmo"
+				}
+			},
       "patterns": [
         {
           "name": "constant.character.character-literal.cosmo",
