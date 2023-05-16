@@ -164,7 +164,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.cosmo",
-					"match": "\\b(if|unless|else|while|until|break|next|for|in|of|return|fn)\\b"
+					"match": "\\b(if|unless|else|while|until|every|break|next|for|in|of|return|fn|const|match)\\b"
 				},
 				{
           "name": "keyword.type.cosmo",
