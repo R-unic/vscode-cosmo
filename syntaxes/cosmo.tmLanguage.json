@@ -164,11 +164,11 @@
 			"patterns": [
 				{
 					"name": "keyword.control.cosmo",
-					"match": "\\b(if|unless|else|while|until|every|break|next|for|in|of|return|fn|const|match)\\b"
+					"match": "\\b(if|unless|else|while|until|every|break|next|for|in|is|of|return|fn|const|match)\\b"
 				},
 				{
           "name": "keyword.type.cosmo",
-          "match": "\\b(type|bool|int|float|string|char|any|void)\\b"
+          "match": "\\b(func|type|bool|int|float|string|char|any|void)\\b"
         },
         {
           "name": "keyword.other.cosmo",
