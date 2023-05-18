@@ -164,7 +164,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.cosmo",
-					"match": "\\b(if|unless|else|while|until|every|break|next|for|in|is|of|return|fn|const|match)\\b"
+					"match": "\\b(if|unless|else|while|until|every|break|next|in|is|of|return|fn|const|match)\\b"
 				},
 				{
           "name": "keyword.type.cosmo",
@@ -241,7 +241,7 @@
       "patterns": [
         {
           "name": "meta.function-call.cosmo",
-          "match": "\\b\\w+\\s*\\(",
+          "match": "\\b\\w+\\?\\s*\\(",
           "captures": {
             "0": {
               "name": "entity.name.function.cosmo"
@@ -250,7 +250,7 @@
         },
         {
           "name": "meta.function.cosmo",
-          "match": "\\b(\\w+)\\s+fn\\s+(\\w+)\\s*\\(",
+          "match": "\\b(\\w+)fn\\s+\\?(\\w+)\\s*\\(",
           "captures": {
             "1": {
               "name": "storage.type.cosmo"
@@ -266,7 +266,7 @@
       "patterns": [
         {
           "name": "variable.other.cosmo",
-          "match": "\\b\\w+\\b"
+          "match": "\\b\\w+\\?\\b"
         },
         {
           "name": "entity.name.class",
@@ -274,7 +274,7 @@
         },
         {
           "name": "entity.name.class",
-          "match": "([_$[:upper:]][_$[:alnum:]]*)"
+          "match": "([[:upper:]][[:alnum:]]*)"
         },
         {
 					"match": "(\\->|.|::)",
