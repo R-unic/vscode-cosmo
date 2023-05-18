@@ -164,8 +164,12 @@
 			"patterns": [
 				{
 					"name": "keyword.control.cosmo",
-					"match": "\\b(if|unless|else|while|until|every|break|next|in|is|of|return|fn|const|match)\\b"
+					"match": "\\b(if|unless|else|while|until|every|break|next|in|is|of|return|fn|const|match|use|from)\\b"
 				},
+				{
+          "name": "keyword.operator.cosmo",
+          "match": "\\b(class|interface|mixin)\\b"
+        },
 				{
           "name": "keyword.type.cosmo",
           "match": "\\b(func|type|bool|int|float|string|char|any|void)\\b"
@@ -241,7 +245,7 @@
       "patterns": [
         {
           "name": "meta.function-call.cosmo",
-          "match": "\\b\\w+\\?\\s*\\(",
+          "match": "\\b\\w+\\??\\s*\\(",
           "captures": {
             "0": {
               "name": "entity.name.function.cosmo"
@@ -250,7 +254,7 @@
         },
         {
           "name": "meta.function.cosmo",
-          "match": "\\b(\\w+)fn\\s+\\?(\\w+)\\s*\\(",
+          "match": "\\b(\\w+)fn\\s+\\??(\\w+)\\s*\\(",
           "captures": {
             "1": {
               "name": "storage.type.cosmo"
@@ -259,22 +263,26 @@
               "name": "entity.name.function.cosmo"
             }
           }
-        }
+        },
+				{
+					"name": "support.function",
+					"match": "\\b(puts)\\b"
+				}
       ]
     },
 		"identifiers": {
       "patterns": [
         {
           "name": "variable.other.cosmo",
-          "match": "\\b\\w+\\?\\b"
+          "match": "\\b\\w+\\b\\??"
         },
         {
           "name": "entity.name.class",
-          "match": "($)"
+          "match": "\\b($)\\b"
         },
         {
           "name": "entity.name.class",
-          "match": "([[:upper:]][[:alnum:]]*)"
+          "match": "\\b([[:upper:]][[:alpha:]]*)\\b"
         },
         {
 					"match": "(\\->|.|::)",
