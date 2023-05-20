@@ -164,7 +164,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.cosmo",
-					"match": "\\b(if|unless|else|while|until|every|break|next|in|is|of|const|return|fn|case|when|use)\\b"
+					"match": "\\b(new|if|unless|else|while|until|every|break|next|in|is|of|const|return|fn|case|when|use|throw)\\b"
 				},
 				{
           "name": "keyword.operator.cosmo",
@@ -245,7 +245,7 @@
       "patterns": [
         {
           "name": "meta.function-call.cosmo",
-          "match": "\\b\\w+\\??\\s*\\(",
+          "match": "\\b[a-z]+\\??\\s*\\(",
           "captures": {
             "0": {
               "name": "entity.name.function.cosmo"
@@ -254,7 +254,7 @@
         },
         {
           "name": "meta.function.cosmo",
-          "match": "\\b(\\w+)fn\\s+\\??(\\w+)\\s*\\(",
+          "match": "\\b(\\w+)fn\\s+\\w+\\??\\(?",
           "captures": {
             "1": {
               "name": "storage.type.cosmo"
@@ -274,7 +274,7 @@
       "patterns": [
 				{
           "name": "entity.name.class",
-          "match": "\\b[A-Z][a-zA-Z]*\\b"
+          "match": "\\b([A-Z][a-z]*)+\\(?\\b"
         },
 				{
           "name": "entity.name.class",
