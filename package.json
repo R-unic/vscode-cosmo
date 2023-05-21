@@ -3,7 +3,7 @@
   "publisher": "cosmo",
   "displayName": "Cosmo Syntax Highlighting",
   "description": "Provides syntax highlighting for the Cosmo language made by R-unic.",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "engines": {
     "vscode": "^1.7.0"
   },
