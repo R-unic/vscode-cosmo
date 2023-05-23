@@ -245,7 +245,7 @@
       "patterns": [
         {
           "name": "meta.function-call.cosmo",
-          "match": "\\b[_$a-z]+\\??\\s*\\(",
+          "match": "\\b[_$a-z]+[\\?\\!]?\\(",
           "captures": {
             "0": {
               "name": "entity.name.function.cosmo"
@@ -254,7 +254,7 @@
         },
         {
           "name": "meta.function.cosmo",
-          "match": "\\b(\\w+)fn\\s+[_$a-z]+\\??\\(?",
+          "match": "\\b(\\w+)fn\\s+[_$a-z]+([\\?\\!]?)\\(?",
           "captures": {
             "1": {
               "name": "storage.type.cosmo"
@@ -282,8 +282,12 @@
         },
         {
           "name": "variable.other.cosmo",
-          "match": "\\b\\w+\\b\\??"
+          "match": "\\b\\w+\\b"
         },
+				{
+					"match": "(\\{\\{|\\}\\})",
+					"name": "keyword.operator.brackets.cosmo"
+				},
         {
 					"match": "(\\->|.|::)",
 					"name": "keyword.operator.access.cosmo"
