@@ -205,7 +205,48 @@
 				{
 					"name": "constant.character.escape.cosmo",
 					"match": "\\\\."
-				}
+				},
+				{
+          "name": "string.interpolated.cosmo",
+          "begin": "%\\{",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.interpolation.begin.cosmo"
+            }
+          },
+          "end": "\\}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.interpolation.end.cosmo"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#keywords"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#characters"
+            },
+            {
+              "include": "#numerics"
+            },
+            {
+              "include": "#functions"
+            },
+            {
+              "include": "#identifiers"
+            },
+            {
+              "include": "#object-types"
+            }
+          ]
+        }
 			]
 		},
 		"characters": {
