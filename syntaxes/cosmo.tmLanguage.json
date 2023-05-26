@@ -172,7 +172,7 @@
         },
 				{
           "name": "keyword.type.cosmo",
-          "match": "\\b(func|type|bool|bigint|int|float|string|char|any|void)\\b"
+          "match": "\\b(func|type|bool|bigint|uint|int|float|string|char|any|void)\\b"
         },
         {
           "name": "keyword.other.cosmo",
