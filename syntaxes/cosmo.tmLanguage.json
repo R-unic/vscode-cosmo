@@ -209,7 +209,7 @@
 			},
       "patterns": [
         {
-          "name": "constant.character.character-literal.cosmo",
+          "name": "constant.character.escape.cosmo",
           "match": "\\\\."
         }
       ]
