@@ -112,7 +112,7 @@
           "match": "\\b(class|interface|mixin|public|protected|static)\\b"
         },
 				{
-          "name": "keyword.type.cosmo",
+          "name": "storage.type.cosmo",
           "match": "\\b(func|type|bool|bigint|uint|int|float|string|char|any|void)\\b"
         },
         {
@@ -227,10 +227,13 @@
       "patterns": [
 				{
 					"name": "meta.function.cosmo",
-					"begin": "\\b(fn)\\b\\s+",
-					"end": "\\b([_$a-zA-Z][_$a-zA-Z0-9]+)\\b",
+					"begin": "\\b(?=fn\\b)(\\?<=^|\\s)(fn)\\s+([_$a-zA-Z][_$a-zA-Z0-9]+[\\?\\!]?)\\s*(\\()",
+					"end": "\\)",
 					"captures": {
 						"1": {
+							"name": "keyword.control.cosmo"
+						},
+						"2": {
 							"name": "entity.name.function.cosmo"
 						}
 					}
