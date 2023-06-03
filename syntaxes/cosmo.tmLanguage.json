@@ -10,6 +10,9 @@
 			"include": "#keywords"
 		},
 		{
+			"include": "#multiline-strings"
+		},
+		{
 			"include": "#strings"
 		},
 		{
@@ -112,7 +115,7 @@
           "match": "\\b(class|interface|mixin|public|protected|static)\\b"
         },
 				{
-          "name": "storage.type.cosmo",
+          "name": "keyword.type.cosmo",
           "match": "\\b(func|type|bool|bigint|uint|int|float|string|char|any|void)\\b"
         },
         {
@@ -167,6 +170,74 @@
             },
             {
               "include": "#keywords"
+            },
+						{
+              "include": "#multiline-strings"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#characters"
+            },
+            {
+              "include": "#numerics"
+            },
+						{
+              "include": "#object-types"
+            },
+						{
+							"include": "#functions"
+						},
+            {
+              "include": "#identifiers"
+            }
+          ]
+        }
+			]
+		},
+		"multiline-strings": {
+			"name": "string.other.cosmo",
+			"begin": "\\%(\\(|\\[)",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.cosmo"
+				}
+			},
+			"end": "\\)|\\]",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.cosmo"
+				}
+			},
+			"patterns": [
+				{
+					"name": "constant.character.escape.cosmo",
+					"match": "\\\\."
+				},
+				{
+          "name": "string.interpolated.cosmo",
+          "begin": "%\\{",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.interpolation.begin.cosmo"
+            }
+          },
+          "end": "\\}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.interpolation.end.cosmo"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#keywords"
+            },
+						{
+              "include": "#multiline-strings"
             },
             {
               "include": "#strings"
@@ -227,13 +298,12 @@
       "patterns": [
 				{
 					"name": "meta.function.cosmo",
-					"begin": "\\b(?=fn\\b)(\\?<=^|\\s)(fn)\\s+([_$a-zA-Z][_$a-zA-Z0-9]+[\\?\\!]?)\\s*(\\()",
-					"end": "\\)",
+					"match": "(?<=^|\\s)(fn)\\s+([_a-zA-Z][_$a-zA-Z0-9]+)[\\?\\!]?",
 					"captures": {
 						"1": {
 							"name": "keyword.control.cosmo"
 						},
-						"2": {
+						"3": {
 							"name": "entity.name.function.cosmo"
 						}
 					}
