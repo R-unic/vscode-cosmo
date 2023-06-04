@@ -108,7 +108,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.cosmo",
-					"match": "\\b(try|catch|finally|new|if|unless|else|while|until|every|break|next|in|is|of|mut|return|fn|case|when|use|throw)\\b"
+					"match": "\\b(and|or|not|try|catch|finally|new|if|unless|else|while|until|every|break|next|in|is|of|mut|return|fn|case|when|use|throw)\\b"
 				},
 				{
           "name": "keyword.cosmo",
