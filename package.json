@@ -3,7 +3,7 @@
   "publisher": "cosmo",
   "displayName": "Cosmo Language",
   "description": "Provides syntax highlighting and code snippets for the Cosmo programming language made by R-unic.",
-  "version": "0.8.9",
+  "version": "0.8.10",
   "engines": {
     "vscode": "^1.7.0"
   },
