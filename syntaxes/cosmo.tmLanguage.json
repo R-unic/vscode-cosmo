@@ -111,8 +111,8 @@
 					"match": "\\b(new|if|unless|else|while|until|every|break|next|in|is|of|mut|return|fn|case|when|use|throw)\\b"
 				},
 				{
-          "name": "keyword.operator.cosmo",
-          "match": "\\b(class|interface|mixin|public|protected|static)\\b"
+          "name": "keyword.cosmo",
+          "match": "\\b(enum|class|interface|mixin|public|protected|static)\\b"
         },
 				{
           "name": "keyword.type.cosmo",
