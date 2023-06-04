@@ -1,7 +1,7 @@
 {
   "Class Definition": {
 		"prefix": [ "class", "classdef" ],
-		"description": "Create a class with a constructor",
+		"description": "class ClassName + construct() method",
 		"body": [
 			"class ${1:ClassName} {",
       "\tpublic ${1:ClassName} fn construct() {",
@@ -12,29 +12,36 @@
 	},
   "Public Function Definition": {
 		"prefix": [ "pub", "public" ],
-		"description": "Create a public function",
+		"description": "public typedef fn function_name()",
 		"body": [
       "public ${1:typedef} fn ${2:function_name}() {",
-      "\t${4}",
+      "\t${3}",
       "}"
 		]
 	},
 	"Private Function Definition": {
 		"prefix": [ "pri", "private" ],
-		"description": "Create a private function",
+		"description": "typedef fn function_name()",
 		"body": [
-      "private ${1:typedef} fn ${2:function_name}() {",
-      "\t${4}",
+      "${1:typedef} fn ${2:function_name}() {",
+      "\t${3}",
       "}"
 		]
 	},
 	"Main Function": {
 		"prefix": [ "main" ],
-		"description": "Generates the main function",
+		"description": "public int fn main(string[] args)",
 		"body": [
 			"public int fn main(string[] args) {",
       "\t${1}",
       "}"
+		]
+	},
+	"Throw Exception": {
+		"prefix": [ "throw" ],
+		"description": "throw new Exception(\"message\")",
+		"body": [
+			"throw new Exception(\"${1:message}\")"
 		]
 	}
 }
