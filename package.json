@@ -31,6 +31,10 @@
           ".cos",
           ".⭐"
         ],
+        "icon": {
+          "light": "./assets/icon.png",
+          "dark": "./assets/icon.png"
+        },
         "configuration": "./language-configuration.json"
       }
     ],
