@@ -14,6 +14,12 @@
     "url": "https://github.com/R-unic/vscode-cosmo"
   },
   "contributes": {
+    "snippets": [
+      {
+        "language": "cosmo",
+        "path": "./.vscode/cosmo-snippets.code-snippets"
+      }
+    ],
     "languages": [
       {
         "id": "cosmo",
