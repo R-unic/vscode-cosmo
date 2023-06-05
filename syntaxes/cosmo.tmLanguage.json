@@ -310,7 +310,7 @@
 				},
         {
           "name": "meta.function-call.cosmo",
-          "match": "\\b([_$a-zA-Z][_$a-zA-Z0-9]+)[\\?\\!]?\\s*\\(",
+          "match": "\\b([_$a-zA-Z][_$a-zA-Z0-9]+)[\\?\\!]?\\(",
           "captures": {
             "0": {
               "name": "entity.name.function.cosmo"
