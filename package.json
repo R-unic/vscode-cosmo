@@ -42,7 +42,7 @@
     "snippets": [
       {
         "language": "cosmo",
-        "path": "./.vscode/cosmo-snippets.code-snippets"
+        "path": "./snippets/cosmo.json"
       }
     ]
   }
